@@ -1,7 +1,7 @@
 console.log('%c HI', 'color: firebrick')
 
 const breedUrl = 'https://dog.ceo/api/breeds/list/all'
-dropdown = document.getElementById('breed-dropdown')
+const dropdown = document.getElementById('breed-dropdown')
 
 function fetchImages() {
     fetch('https://dog.ceo/api/breeds/image/random/4')
@@ -25,15 +25,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // changeColor()
   })
 
-// dropdown.addEventListener('click', function(){
-//     let dropdownValue = document.getElementById('breed-dropdown').value  
-//     list = document.querySelector('ul')
-//     if (dropdownValue){
-//         while (list.firstChild) {
-//             list.removeChild(list.firstChild);
-//           }
-//     }
-// })
+dropdown.addEventListener('click', function(){
+    let dropdownValue = document.getElementById('breed-dropdown').value  
+    list = document.querySelector('ul')
+    if (dropdownValue){
+        while (list.firstChild) {
+            debugger
+            list.removeChild(list.firstChild);
+          }
+    }
+})
 
 function fetchBreeds() {
     fetch(breedUrl)
